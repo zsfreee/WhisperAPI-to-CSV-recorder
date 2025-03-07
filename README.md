@@ -24,25 +24,37 @@ git clone https://github.com/zsfree/WhisperAPI-to-CSV-recorder.git
 cd WhisperAPI-to-CSV-recorder
 ```
 
-### 2. Установка зависимостей
+### 2. Создание виртуального окружения
+```bash
+# Windows
+python -m venv venv
+venv\Scripts\activate
+
+# Linux/macOS
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Установка зависимостей
 ```bash
 python.exe -m pip install --upgrade pip
 pip install -r requirements.txt
 pip install --upgrade openai
 ```
 
-### 3. Настройка API ключа
-В файле `.env` в корневой директории проекта укажите ваш API-ключ OpenAI:
+### 4. Настройка API ключа
+Переименуйте файл `.env` в корневой директории проекта и добавьте в него ваш API-ключ OpenAI:
 ```
 OPENAI_API_KEY=ваш_ключ_api
 ```
 
-### 4. Установка FFmpeg
+### 5. Установка FFmpeg
 FFmpeg необходим для обработки аудиофайлов. Его можно установить одним из следующих способов:
 
 **Windows:**
 1. Скачайте FFmpeg с официального сайта: https://ffmpeg.org/download.html
-2. Распакуйте архив и поместите файлы из папки bin в корневую папку проекта
+2. Распакуйте архив и поместите файлы в папку `ffmpeg` внутри проекта, или
+3. Добавьте путь к исполняемым файлам FFmpeg в переменную среды PATH
 
 **Linux:**
 ```bash
